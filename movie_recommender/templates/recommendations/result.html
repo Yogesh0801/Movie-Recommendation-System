@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendation Result</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'recommendations/css/styles.css' %}">
+</head>
+<body>
+    <h1>Recommendations for "{{ movie_name }}"</h1>
+    <ul>
+        {% for movie in recommendations %}
+        <li>{{ movie }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'recommend' %}">Recommend Another</a>
+    <a href="{% url 'login' %}">LOGOUT</a>
+</body>
+</html>
